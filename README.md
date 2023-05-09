@@ -256,7 +256,7 @@ try{
 ````
 
 ----------
-#Doubts ?
+## Doubts ?
 ## Guide to Replacing cPanel API 1 Functions with UAPI Equivalents 
 
 This document lists the UAPI functions which replace previously-deprecated cPanel API 1 functions. We introduced [UAPI](https://api.docs.cpanel.net/cpanel/introduction) in cPanel & WHM version 11.42. As we developed additional UAPI functions, we created equivalents to some [cPanel API 1](https://documentation.cpanel.net/display/DD/Guide+to+cPanel+API+1) functions. Beginning with cPanel & WHM version 82, we started development for new UAPI modules and functions. These new modules and functions replace any cPanel API 1 functions without a current equivalent.
@@ -503,6 +503,11 @@ The `cPanel` class provides an interface to interact with cPanel's UAPI and APIv
 ## How to contribute
 - Create a fork, make changes and send a pull request.
 - Raise a issue
+
+
+## RoadMap
+
+- getSessionUrl() => Returns the current logged in session url
 
 ### Based On 
 Built from an abandoned project [myPHPnotes/Cpanel](https://github.com/myPHPnotes/cPanel)
