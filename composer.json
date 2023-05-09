@@ -1,0 +1,22 @@
+{
+    "name": "tallesairan/cpanel",
+    "description": "This class allows developers to execute various functions of the cPanel UAPI and APIv2 directly from their PHP applications",
+    "type": "library",
+    "keywords": ["api", "http", "rest", "cPanel", "UAPI", "api2"],
+    "homepage": "https://github.com/tallesairan/cpanel",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AiranDev\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Talles Airan",
+            "email": "airan.talles@gmail.com"
+        }
+    ]
+}
