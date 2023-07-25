@@ -1,5 +1,15 @@
+#idea
+.idea/
+
+#Package tests
 vendor/
 dist/
 composer.lock
 .DS_Store
 __MACOSX_/
+wp-autofixer.php
+*.txt
+*.py
+auto.php
+example.php
+wordpress

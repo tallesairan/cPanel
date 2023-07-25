@@ -2,13 +2,12 @@
 
 namespace AiranDev;
 /**
- * 
-*   The cPanel class is a PHP library designed to interact with cPanel APIs, a popular web hosting management platform. This class allows developers to execute various functions of the cPanel UAPI and APIv2 directly from their PHP applications. With the ability to use a proxy and an advanced system of cookies and logs
-*   this class offers enhanced flexibility and security for developers.
- 
- *   @author Talles Airan <airan.talles@gmail.com>
- *   @copyright Copyright (c) 2023 AiranDev
- *   @date 2023-05-09
+ *
+ *  The cPanel class is a PHP library designed to interact with cPanel APIs, a popular web hosting management platform. This class allows developers to execute various functions of the cPanel UAPI and APIv2 directly from their PHP applications. With the ability to use a proxy and an advanced system of cookies and logs
+ *  this class offers enhanced flexibility and security for developers.
+ *  @author Talles Airan <airan.talles@gmail.com>
+ *  @copyright Copyright (c) 2023 AiranDev
+ *  @date 2023-05-09
  *   
  */
 class cPanel
@@ -91,7 +90,14 @@ class cPanel
         $this->signIn();
     }
 
-
+    /**
+     * Returns current session url
+     *
+     * @return void
+     */
+    public function getSessionUrl(){
+        return $this->homepage;
+    }
     /**
      * get random proxy from the list of proxies
      *
@@ -184,7 +190,7 @@ class cPanel
         curl_setopt_array($ch,$curlOpts);
         $answer = curl_exec($ch);
         if (curl_error($ch)) {
-            echo curl_error($ch); exit;
+            throw new \Exception("Curl Exec Error: ".curl_error($ch), 1);            
         }
         curl_close($ch);
         if($this->log){
@@ -266,15 +272,7 @@ class cPanel
         return  json_decode($this->Request($this->exPage . $module . "/" . $function . "?" . $parameters,$params));
 
     }
-    
-    /**
-     * Api2 function Wrapper
-     *
-     * @param string $module
-     * @param string $function
-     * @param array $parameters
-     * @return string
-     */
+    // API 2 Handler
     public function api2($module, $function, array $parameters = [])
     {
         if (count($parameters) < 1) {
